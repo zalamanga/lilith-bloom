@@ -82,6 +82,8 @@ Hasil build adalah `target/lilith-bloom.war`. Untuk deploy tanpa Docker, siapkan
 
 Mojarra 2.3.21 memakai artifact `org.glassfish:jakarta.faces` tetapi masih memakai namespace `javax.faces`; Tomcat 10/11 memerlukan migrasi. Hibernate 5.6 dipertahankan dekat dengan stack asal. Ini pemulihan demo stack lama, tanpa klaim siap produksi atau telah diaudit untuk penerapan publik.
 
+[Alur kode dan diagram](docs/CODE_FLOW.md) menjelaskan reservasi publik, konfirmasi penyimpanan, akun pengelola, versi record, dan arsip jadwal.
+
 ## Jika ada masalah
 
 - **Port dipakai:** ubah `APP_PORT` dalam `.env`, kemudian jalankan `docker compose up -d`.
