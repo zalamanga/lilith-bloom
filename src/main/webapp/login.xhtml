@@ -1,0 +1,11 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core" template="/WEB-INF/template.xhtml">
+<ui:define name="title">Masuk pengelola</ui:define>
+<ui:define name="content"><section class="auth-panel"><h1>Masuk pengelola demo</h1><p>Kelola data reservasi pada database lokal. Semua akun demo memiliki hak akses yang sama.</p>
+    <ui:fragment rendered="#{param.registered eq '1'}"><p class="notice" role="status">Akun tersimpan. Silakan masuk.</p></ui:fragment>
+    <ui:fragment rendered="#{param.logout eq '1'}"><p class="notice" role="status">Sesi sudah diakhiri.</p></ui:fragment>
+    <h:form id="loginForm"><input type="hidden" name="csrf" value="#{security.csrf}" />
+        <h:outputLabel for="email" value="Email" /><h:inputText id="email" value="#{auth.email}" required="true" requiredMessage="Email wajib diisi." maxlength="254"><f:passThroughAttribute name="autocomplete" value="username" /><f:passThroughAttribute name="inputmode" value="email" /></h:inputText>
+        <h:outputLabel for="password" value="Password" /><h:inputSecret id="password" value="#{auth.password}" required="true" requiredMessage="Password wajib diisi." maxlength="128" redisplay="false"><f:passThroughAttribute name="autocomplete" value="current-password" /></h:inputSecret>
+        <h:commandButton value="Masuk" action="#{auth.login}" />
+    </h:form><p>Belum ada akun? <h:link outcome="register" value="Buat akun pengelola demo" />.</p>
+</section></ui:define></ui:composition>

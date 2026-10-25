@@ -1,0 +1,10 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core" template="/WEB-INF/template.xhtml">
+<ui:define name="title">Reservasi demo</ui:define><ui:define name="content"><section class="auth-panel reservation-panel"><h1>Buat reservasi demo</h1><p>Isi data contoh untuk mencoba penyimpanan reservasi. Pilihan kelas berasal dari proyek tahun 2023; tidak ada kelas aktif, pembayaran, atau pesan konfirmasi email.</p>
+    <h:form id="reservationForm"><input type="hidden" name="csrf" value="#{security.csrf}" /><div class="field-grid">
+        <div><h:outputLabel for="firstName" value="Nama depan" /><h:inputText id="firstName" value="#{booking.firstName}" required="true" requiredMessage="Nama depan wajib diisi." maxlength="80" /></div>
+        <div><h:outputLabel for="lastName" value="Nama belakang" /><h:inputText id="lastName" value="#{booking.lastName}" required="true" requiredMessage="Nama belakang wajib diisi." maxlength="80" /></div>
+        <div><h:outputLabel for="phone" value="Nomor telepon contoh" /><h:inputText id="phone" value="#{booking.phone}" required="true" requiredMessage="Nomor telepon wajib diisi." maxlength="24"><f:passThroughAttribute name="inputmode" value="tel" /></h:inputText></div>
+        <div><h:outputLabel for="email" value="Email contoh" /><h:inputText id="email" value="#{booking.email}" required="true" requiredMessage="Email wajib diisi." maxlength="254"><f:passThroughAttribute name="inputmode" value="email" /></h:inputText></div>
+    </div><h:outputLabel for="workshop" value="Kelas demo dari arsip" /><h:selectOneMenu id="workshop" value="#{booking.workshop}" required="true" requiredMessage="Pilih kelas demo."><f:selectItem itemLabel="Pilih kelas" itemValue="" noSelectionOption="true" /><f:selectItems value="#{workshops.options}" /></h:selectOneMenu>
+    <h:commandButton value="Simpan reservasi demo" action="#{booking.reserve}" /></h:form>
+</section></ui:define></ui:composition>

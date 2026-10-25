@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" lang="id">
+<h:head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><ui:insert name="title">Lilith Bloom</ui:insert> | Demo reservasi</title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+    <a class="skip-link" href="#content">Lewati ke konten</a>
+    <header class="site-header">
+        <h:link outcome="index" styleClass="brand"><h:graphicImage library="images" name="logo.png" alt="Lilith Bloom, beranda" /></h:link>
+        <nav aria-label="Navigasi utama">
+            <h:link outcome="index" value="Beranda" /><h:link outcome="schedule" value="Jadwal 2023" />
+            <h:link outcome="gallery" value="Galeri" /><h:link outcome="reserve" value="Reservasi demo" />
+            <h:link outcome="reservations" value="Kelola reservasi" rendered="#{not empty sessionScope.accountId}" />
+            <h:link outcome="login" value="Masuk pengelola" rendered="#{empty sessionScope.accountId}" />
+        </nav>
+        <ui:fragment rendered="#{not empty sessionScope.accountId}">
+            <form method="post" action="#{request.contextPath}/logout" class="logout-form">
+                <input type="hidden" name="csrf" value="#{security.csrf}" /><button type="submit" class="secondary">Keluar</button>
+            </form>
+        </ui:fragment>
+    </header>
+    <main id="content" tabindex="-1">
+        <div role="alert"><h:messages id="messages" styleClass="messages" errorClass="error" infoClass="success" /></div>
+        <p id="loading" class="loading" role="status" hidden="hidden">Sedang mengirim. Tunggu sebentar.</p>
+        <ui:insert name="content" />
+    </main>
+    <footer class="site-footer"><p>Lilith Bloom · Proyek reservasi workshop bunga, dipulihkan dari source 2023.</p><p>Demo lokal. Gunakan data contoh, bukan reservasi kelas aktif.</p></footer>
+    <h:outputScript library="js" name="app.js" target="body" />
+</h:body>
+</html>

@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="/WEB-INF/template.xhtml">
+<ui:define name="title">Beranda</ui:define>
+<ui:define name="content">
+    <h:graphicImage library="images" name="pic1.png" alt="Rangkaian bunga dengan tulisan Lilith Bloom dari proyek asal" styleClass="flower-banner" />
+    <section class="intro">
+        <div><h1>Belajar merangkai bunga</h1><p>Proyek Lilith Bloom mengenalkan kelas merangkai vas, buket, dan keranjang bunga. Coba alur reservasi yang tersimpan di database, lalu kelola datanya melalui akun demo.</p><p>Jadwal yang dipertahankan berasal dari tahun 2023. Form ini tidak memesan kelas yang sedang berlangsung.</p><h:link outcome="reserve" value="Buat reservasi demo" styleClass="button" /></div>
+        <h:graphicImage library="images" name="about.jpg" alt="Proses merangkai bunga berwarna merah muda" />
+    </section>
+    <section aria-labelledby="classes-title"><h2 id="classes-title">Kelas dari proyek asal</h2><div class="workshop-grid">
+        <figure><h:graphicImage library="images" name="pic5.jpg" alt="Peserta berkumpul di meja workshop bunga" /><figcaption>Rangkaian vas</figcaption></figure>
+        <figure><h:graphicImage library="images" name="pic6.jpg" alt="Peserta menata bunga pada workshop" /><figcaption>Rangkaian buket</figcaption></figure>
+        <figure><h:graphicImage library="images" name="pic7.jpg" alt="Rangkaian bunga di meja kelas" /><figcaption>Rangkaian keranjang</figcaption></figure>
+    </div><p>Foto dipertahankan dari source untuk mengenalkan tema workshop. Dokumentasi asal dan lisensi gambar belum lengkap.</p></section>
+</ui:define></ui:composition>

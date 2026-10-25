@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+/target/
+*.log
+*.war
+*.class
+.idea/
+.vscode/
+nbproject/private/
+.DS_Store
+Thumbs.db

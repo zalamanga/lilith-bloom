@@ -1,0 +1,6 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="/WEB-INF/template.xhtml">
+<ui:define name="title">Hasil reservasi</ui:define><ui:define name="content"><section class="auth-panel">
+    <ui:fragment rendered="#{not empty flash.reservationId}"><h1>Reservasi demo tersimpan</h1><p role="status">Nomor reservasi: <strong><h:outputText value="#{flash.reservationId}" /></strong>.</p><p>Data sudah disimpan pada database lokal. Ini bukan tiket, bukti pembayaran, atau pemesanan kelas yang sedang berlangsung.</p></ui:fragment>
+    <ui:fragment rendered="#{empty flash.reservationId}"><h1>Belum ada hasil reservasi</h1><p>Isi form reservasi untuk mendapatkan konfirmasi penyimpanan. Membuka halaman ini saja tidak membuat reservasi.</p></ui:fragment>
+    <p><h:link outcome="reserve" value="Buat reservasi demo lain" /></p><p><h:link outcome="index" value="Kembali ke beranda" /></p>
+</section></ui:define></ui:composition>

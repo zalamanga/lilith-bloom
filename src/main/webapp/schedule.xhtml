@@ -1,0 +1,5 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" template="/WEB-INF/template.xhtml">
+<ui:define name="title">Arsip jadwal 2023</ui:define><ui:define name="content"><h1>Arsip jadwal workshop 2023</h1><p>Empat puluh agenda berikut dipertahankan dari tabel jadwal proyek asal. Tanggal ini sudah berlalu dan tidak menyatakan ketersediaan kelas saat ini.</p>
+    <div class="schedule-list"><ui:repeat value="#{workshops.archive}" var="item"><article><div class="date"><strong>#{item.day} #{item.month}</strong><span>2023 · #{item.time}</span></div><h2><h:outputText value="#{item.title}" /></h2></article></ui:repeat></div>
+    <p><h:link outcome="reserve" value="Coba form reservasi demo" /></p>
+</ui:define></ui:composition>

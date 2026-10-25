@@ -1,0 +1,10 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core" template="/WEB-INF/template.xhtml">
+<ui:define name="title">Buat akun demo</ui:define><ui:define name="content"><section class="auth-panel"><h1>Buat akun pengelola demo</h1><p>Akun ini dapat melihat, mengedit, dan menghapus semua reservasi demo. Gunakan nama dan email contoh; tidak ada email verifikasi yang dikirim.</p>
+    <h:form id="registerForm"><input type="hidden" name="csrf" value="#{security.csrf}" />
+        <h:outputLabel for="name" value="Nama" /><h:inputText id="name" value="#{registration.name}" required="true" requiredMessage="Nama wajib diisi." maxlength="80"><f:passThroughAttribute name="autocomplete" value="name" /></h:inputText>
+        <h:outputLabel for="email" value="Email" /><h:inputText id="email" value="#{registration.email}" required="true" requiredMessage="Email wajib diisi." maxlength="254"><f:passThroughAttribute name="autocomplete" value="username" /><f:passThroughAttribute name="inputmode" value="email" /></h:inputText>
+        <h:outputLabel for="password" value="Password (12 sampai 128 karakter)" /><h:inputSecret id="password" value="#{registration.password}" required="true" requiredMessage="Password wajib diisi." maxlength="128" redisplay="false"><f:passThroughAttribute name="autocomplete" value="new-password" /></h:inputSecret>
+        <h:outputLabel for="confirm" value="Ulangi password" /><h:inputSecret id="confirm" value="#{registration.confirmation}" required="true" requiredMessage="Ulangi password." maxlength="128" redisplay="false"><f:passThroughAttribute name="autocomplete" value="new-password" /></h:inputSecret>
+        <h:commandButton value="Buat akun demo" action="#{registration.register}" />
+    </h:form><p><h:link outcome="login" value="Kembali ke halaman masuk" /></p>
+</section></ui:define></ui:composition>
