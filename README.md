@@ -4,6 +4,19 @@ Proyek latihan **reservasi workshop merangkai bunga** dengan Java 17, JSF/Facele
 
 Jadwal dan gambar dipertahankan dari proyek tahun 2023. Ini demo lokal dengan data contoh, bukan layanan pemesanan kelas aktif. Tidak ada pembayaran, kuota kelas, email konfirmasi, atau verifikasi akun. Semua akun pengelola demo memiliki hak akses yang sama.
 
+## Tampilan aplikasi
+
+![Beranda Lilith Bloom dengan pengenalan workshop bunga dan tautan reservasi demo](docs/images/workshop-home-desktop.png)
+
+Tangkapan aplikasi dari pengujian 25 Oktober 2026. Form masih kosong; pengujian reservasi memakai data sintetis. Perbaikan backend setelah pengambilan gambar tidak mengubah UI ini.
+
+<details>
+<summary>Form reservasi demo</summary>
+
+![Form reservasi demo Lilith Bloom dengan isian nama, telepon, email, dan pilihan kelas arsip](docs/images/reservation-form-desktop.png)
+
+</details>
+
 ## Jalankan dengan Docker
 
 Siapkan Docker Desktop dengan Linux containers dan Docker Compose. Dari PowerShell:
